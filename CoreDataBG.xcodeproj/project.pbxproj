@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5003A301CE9C0D300E91E10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5003A2F1CE9C0D300E91E10 /* Main.storyboard */; };
 		C59422BF1CE1E15E00A6BD56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59422BE1CE1E15E00A6BD56 /* AppDelegate.swift */; };
 		C59422C11CE1E15E00A6BD56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59422C01CE1E15E00A6BD56 /* ViewController.swift */; };
 		C59422C71CE1E15E00A6BD56 /* CoreDataBG.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C59422C51CE1E15E00A6BD56 /* CoreDataBG.xcdatamodeld */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C5003A2F1CE9C0D300E91E10 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C59422BB1CE1E15E00A6BD56 /* CoreDataBG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataBG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59422BE1CE1E15E00A6BD56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C59422C01CE1E15E00A6BD56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				C59422BE1CE1E15E00A6BD56 /* AppDelegate.swift */,
 				C59422C01CE1E15E00A6BD56 /* ViewController.swift */,
 				C59422D31CE1EFA900A6BD56 /* BlueListViewController.swift */,
+				C5003A2F1CE9C0D300E91E10 /* Main.storyboard */,
 				C59508571CE337D000F868F7 /* PersonCell.swift */,
 				C59422C81CE1E15E00A6BD56 /* Assets.xcassets */,
 				C59422CA1CE1E15E00A6BD56 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5003A301CE9C0D300E91E10 /* Main.storyboard in Resources */,
 				C59422CC1CE1E15E00A6BD56 /* LaunchScreen.storyboard in Resources */,
 				C59422C91CE1E15E00A6BD56 /* Assets.xcassets in Resources */,
 			);

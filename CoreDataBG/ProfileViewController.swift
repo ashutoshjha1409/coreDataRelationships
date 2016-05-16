@@ -11,8 +11,9 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+    
     @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
     
     var profile: Person?
 
@@ -27,9 +28,14 @@ class ProfileViewController: UIViewController {
     
     func setup() {
         print("Comes to this view controller")
+        //print("\(profile?.valueForKey("name") as? String)")
         
-        nameLabel.text = "\(profile?.valueForKey("name") as? String)"
-        ageLabel.text = "\(profile?.valueForKey("age") as? String)"
-        //cityLabel.text = "\(profile?.valueForKey("name") as? String)"
+        let addressRln = profile!.addresses
+        let address = addressRln?.allObjects.first as! Address
+        
+        nameLabel?.text = profile?.name!
+        ageLabel?.text = "\(profile!.age!)"
+        
+        cityLabel.text = "\(address.city!)"
     }
 }

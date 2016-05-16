@@ -15,6 +15,26 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func deleteAll(sender: AnyObject) {
+
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        
+        let managedContext = appDelegate?.managedObjectContext
+        let coord = appDelegate!.persistentStoreCoordinator
+        
+        let fetchRequest = NSFetchRequest(entityName: "Person")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        
+        do {
+            try coord.executeRequest(deleteRequest, withContext: managedContext!)
+            tableView.reloadData()
+            
+        } catch let error as NSError {
+            print("Error: \(error)")
+        }
+    }
+
     @IBAction func addMember(sender: AnyObject) {
         
         var name: UITextField?
@@ -105,7 +125,7 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
         let cell = tableView.dequeueReusableCellWithIdentifier("personCell", forIndexPath: indexPath) as! PersonCell
         
         let person = people[indexPath.row]
-
+        
         cell.nameLabel.text = person.valueForKey("name") as? String
         
         return cell
@@ -117,8 +137,8 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("profileVC") as! ProfileViewController
         vc.profile = person as? Person
-        
-        //self.navigationController?.pushViewController(vc, animated: true)
+       
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
