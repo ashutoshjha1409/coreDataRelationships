@@ -27,9 +27,6 @@ class ProfileViewController: UIViewController {
     }
     
     func setup() {
-        print("Comes to this view controller")
-        //print("\(profile?.valueForKey("name") as? String)")
-        
         let addressRln = profile!.addresses
         let address = addressRln?.allObjects.first as! Address
         

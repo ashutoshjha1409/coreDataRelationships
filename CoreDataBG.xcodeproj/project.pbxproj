@@ -51,6 +51,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5003A311CE9DF9800E91E10 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C5D542AD1CE5D971000A7968 /* Address+CoreDataProperties.swift */,
+				C5D542AE1CE5D971000A7968 /* Address.swift */,
+				C59422C51CE1E15E00A6BD56 /* CoreDataBG.xcdatamodeld */,
+				C5D542AF1CE5D971000A7968 /* Person+CoreDataProperties.swift */,
+				C5D542B01CE5D971000A7968 /* Person.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C5003A321CE9DFAE00E91E10 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C59422D31CE1EFA900A6BD56 /* BlueListViewController.swift */,
+				C5D542B81CE611BC000A7968 /* ProfileViewController.swift */,
+				C59422C01CE1E15E00A6BD56 /* ViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C5003A331CE9DFD500E91E10 /* customCell */ = {
+			isa = PBXGroup;
+			children = (
+				C59508571CE337D000F868F7 /* PersonCell.swift */,
+			);
+			path = customCell;
+			sourceTree = "<group>";
+		};
 		C59422B21CE1E15E00A6BD56 = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +100,14 @@
 		C59422BD1CE1E15E00A6BD56 /* CoreDataBG */ = {
 			isa = PBXGroup;
 			children = (
-				C5D542AD1CE5D971000A7968 /* Address+CoreDataProperties.swift */,
-				C5D542AE1CE5D971000A7968 /* Address.swift */,
-				C5D542AF1CE5D971000A7968 /* Person+CoreDataProperties.swift */,
-				C5D542B01CE5D971000A7968 /* Person.swift */,
+				C5003A311CE9DF9800E91E10 /* CoreData */,
+				C5003A331CE9DFD500E91E10 /* customCell */,
+				C5003A321CE9DFAE00E91E10 /* views */,
 				C59422BE1CE1E15E00A6BD56 /* AppDelegate.swift */,
-				C59422C01CE1E15E00A6BD56 /* ViewController.swift */,
-				C59422D31CE1EFA900A6BD56 /* BlueListViewController.swift */,
-				C5003A2F1CE9C0D300E91E10 /* Main.storyboard */,
-				C59508571CE337D000F868F7 /* PersonCell.swift */,
 				C59422C81CE1E15E00A6BD56 /* Assets.xcassets */,
-				C59422CA1CE1E15E00A6BD56 /* LaunchScreen.storyboard */,
 				C59422CD1CE1E15E00A6BD56 /* Info.plist */,
-				C59422C51CE1E15E00A6BD56 /* CoreDataBG.xcdatamodeld */,
-				C5D542B81CE611BC000A7968 /* ProfileViewController.swift */,
+				C59422CA1CE1E15E00A6BD56 /* LaunchScreen.storyboard */,
+				C5003A2F1CE9C0D300E91E10 /* Main.storyboard */,
 			);
 			path = CoreDataBG;
 			sourceTree = "<group>";
@@ -182,6 +206,7 @@
 				C59422CB1CE1E15E00A6BD56 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
