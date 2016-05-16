@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 
-class BlueListViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
+class BlueListViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -67,6 +67,8 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.delegate = self
+        tableView.dataSource = self
         setup()
     }
     
@@ -76,7 +78,7 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        setup()
+       // setup()
     }
     
     func setup() {
@@ -103,15 +105,20 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
         let cell = tableView.dequeueReusableCellWithIdentifier("personCell", forIndexPath: indexPath) as! PersonCell
         
         let person = people[indexPath.row]
-    
-        let addressRln = person.valueForKey("addresses")
-        let  address = addressRln?.allObjects.first as! Address
 
         cell.nameLabel.text = person.valueForKey("name") as? String
-        cell.ageLabel.text = "\(person.valueForKey("age") as! Int)"
-        cell.city.text = address.city!
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let person = people[indexPath.row]
+        print(indexPath.row)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("profileVC") as! ProfileViewController
+        vc.profile = person as? Person
+        
+        //self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
