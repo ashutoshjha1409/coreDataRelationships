@@ -161,18 +161,22 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
         let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedContext)
         let addEntity = NSEntityDescription.entityForName("Address", inManagedObjectContext: managedContext)
         
-        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        let person = Person(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
-        let address = NSManagedObject(entity: addEntity!, insertIntoManagedObjectContext: managedContext)
+        let address = Address(entity: addEntity!, insertIntoManagedObjectContext: managedContext)
         
         let ageAsInt = Int(age)!
         
-        person.setValue(name, forKey: "name")
-        person.setValue(ageAsInt, forKey: "age")
+//        person.setValue(name, forKey: "name")
+//        person.setValue(ageAsInt, forKey: "age")
+//        
+//        address.setValue(city, forKey: "city")
         
-        address.setValue(city, forKey: "city")
-    
-        person.setValue(NSSet(object: address), forKey: "addresses")
+        person.name = name
+        person.age = ageAsInt
+        address.city = city
+        
+        person.addresses = NSSet(object: address)
         
         do {
             try person.managedObjectContext?.save()
