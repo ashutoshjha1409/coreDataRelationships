@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     var profile: Person?
 
     override func viewDidLoad(){
@@ -32,6 +34,8 @@ class ProfileViewController: UIViewController {
         
         nameLabel?.text = profile?.name!
         ageLabel?.text = "\(profile!.age!)"
+        
+        imageView.image = UIImage(data: (profile?.image)!)
         
         cityLabel.text = "\(address.city!)"
     }

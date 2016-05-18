@@ -162,6 +162,9 @@
                                 <color key="textColor" red="0.028445675529999999" green="0.61414817720000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mbJ-H5-Fje">
+                                <rect key="frame" x="40" y="243" width="240" height="167"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -169,6 +172,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="enH-s5-vuV" id="gTd-py-mK8"/>
                         <outlet property="cityLabel" destination="DeS-lH-mM6" id="4cB-xG-jxn"/>
+                        <outlet property="imageView" destination="mbJ-H5-Fje" id="ArA-au-YGq"/>
                         <outlet property="nameLabel" destination="aJW-lo-IEj" id="Spb-Vo-RIZ"/>
                     </connections>
                 </viewController>

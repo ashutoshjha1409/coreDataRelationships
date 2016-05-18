@@ -33,6 +33,7 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate, UIImagePi
         if name.text != "" && age.text != "" {
             person.name = name.text
             person.age = ageAsInt
+            person.image = UIImageJPEGRepresentation(imageView.image!, 1.0) //imageView.image
             address.city = city.text
             address.country = country.text
             
