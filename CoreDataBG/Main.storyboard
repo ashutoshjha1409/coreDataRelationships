@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--The List-->
@@ -30,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfR-vt-Fp6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfR-vt-Fp6">
                                                     <rect key="frame" x="33" y="8" width="147" height="40.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="1" green="0.31045604760000001" blue="0.36800636440000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,18 +50,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="The List" id="eab-QQ-n0y">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Add" id="Ivv-H9-lt3">
-                                <connections>
-                                    <action selector="addMember:" destination="EMW-ku-IWy" id="9fR-IQ-3DH"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="delete_nav_icon" id="d2M-NQ-VmG">
-                                <connections>
-                                    <action selector="deleteAll:" destination="EMW-ku-IWy" id="Oi2-pz-0dH"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Ivv-H9-lt3">
+                            <connections>
+                                <segue destination="TpG-7d-yfQ" kind="presentation" id="Syf-e2-ZZl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -72,6 +64,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkk-o5-LvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-276" y="-480"/>
+        </scene>
+        <!--Add Details View Controller-->
+        <scene sceneID="sqG-Z8-OWR">
+            <objects>
+                <viewController id="TpG-7d-yfQ" customClass="AddDetailsViewController" customModule="CoreDataBG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R7W-g8-drV"/>
+                        <viewControllerLayoutGuide type="bottom" id="5f0-Il-kjp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ft0-7P-XSx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYm-hq-OqF">
+                                <rect key="frame" x="20" y="80" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AtG-OD-B0W">
+                                <rect key="frame" x="20" y="123" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrf-GP-2qZ">
+                                <rect key="frame" x="20" y="168" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7po-fJ-V7K">
+                                <rect key="frame" x="109" y="421" width="102" height="39"/>
+                                <color key="backgroundColor" red="0.00028909254456266353" green="0.68634553441799628" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="TpG-7d-yfQ" eventType="touchUpInside" id="SlP-Dm-OZ7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile Setting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMD-PF-JoG">
+                                <rect key="frame" x="20" y="46" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.61201751336662236" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAq-LC-33D">
+                                <rect key="frame" x="20" y="213" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SvR-A2-lJe">
+                                <rect key="frame" x="69" y="270" width="182" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="age" destination="AtG-OD-B0W" id="S5U-oO-JVI"/>
+                        <outlet property="city" destination="wrf-GP-2qZ" id="y8n-Qj-4aI"/>
+                        <outlet property="country" destination="cAq-LC-33D" id="51y-oJ-wvz"/>
+                        <outlet property="imageView" destination="SvR-A2-lJe" id="tKZ-fF-RiL"/>
+                        <outlet property="name" destination="zYm-hq-OqF" id="8JG-8w-c12"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSd-gi-5D7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="-486"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Oos-72-e1C">
@@ -94,7 +153,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enH-s5-vuV">
                                 <rect key="frame" x="128" y="148" width="65" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeS-lH-mM6">
@@ -115,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3v-lS-YYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="-480"/>
+            <point key="canvasLocation" x="604" y="-480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lak-dI-XZy">
@@ -139,6 +198,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="delete_nav_icon" width="22" height="22"/>
+        <image name="placeholder" width="750" height="750"/>
     </resources>
 </document>

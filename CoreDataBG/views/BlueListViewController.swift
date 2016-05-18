@@ -49,7 +49,7 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
             age = alert.textFields![1] as UITextField
             city = alert.textFields![2] as UITextField
             
-            self.saveName(name!.text!, age: age!.text!, city: city!.text!)
+           // self.saveName(name!.text!, age: age!.text!, city: city!.text!)
             self.tableView.reloadData()
         })
         
@@ -98,7 +98,8 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-       // setup()
+        print("comes here")
+        setup()
     }
     
     func setup() {
@@ -111,6 +112,7 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
         do {
             let results = try managedContext?.executeFetchRequest(fetchRequest)
             people = results as! [NSManagedObject]
+            tableView.reloadData()
             
         } catch let error as NSError {
             print("Error: \(error)")
@@ -133,7 +135,7 @@ class BlueListViewController: UIViewController, UITableViewDataSource, UITextFie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let person = people[indexPath.row]
-        print(indexPath.row)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("profileVC") as! ProfileViewController
         vc.profile = person as? Person

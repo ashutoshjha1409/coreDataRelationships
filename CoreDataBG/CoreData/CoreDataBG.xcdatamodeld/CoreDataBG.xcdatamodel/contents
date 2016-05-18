@@ -7,11 +7,12 @@
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="addresses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Address" inverseName="persons" inverseEntity="Address" syncable="YES"/>
     </entity>
     <elements>
         <element name="Address" positionX="-63" positionY="0" width="128" height="88"/>
-        <element name="Person" positionX="-288" positionY="54" width="128" height="88"/>
+        <element name="Person" positionX="-288" positionY="54" width="128" height="103"/>
     </elements>
 </model>
